@@ -2,6 +2,7 @@
 
 int SecretNumber = 36;
 bool isAnswerCorrect = false;
+int NumofGuesses = 0;
 Guesses();
 
 void Guesses()
@@ -10,20 +11,21 @@ void Guesses()
     string answer = Console.ReadLine(); //reads the user input
     int ParsedAnswer = int.Parse(answer); //parsing user answer to integer
     GuessEqualToSecretNumber(ParsedAnswer);
-    int NumofGuesses = 0;
 
-    while (isAnswerCorrect == false && NumofGuesses < 3)
+
+    while (isAnswerCorrect == false && NumofGuesses < 4)
     {
         Console.WriteLine("Guess The secret number?");
         answer = Console.ReadLine(); //reads the user input
         ParsedAnswer = int.Parse(answer);
         GuessEqualToSecretNumber(ParsedAnswer);
-        NumofGuesses += 1;
+
 
     }
 }
 void GuessEqualToSecretNumber(int answer)
 {
+    NumofGuesses += 1;
     if (answer == SecretNumber)
     {
         Console.WriteLine($"Your guess is correct");
@@ -31,6 +33,6 @@ void GuessEqualToSecretNumber(int answer)
     }
     else
     {
-        Console.WriteLine("Try again");
+        Console.WriteLine($"Incorrect. You have have guessed {NumofGuesses} out of 4");
     }
 }
