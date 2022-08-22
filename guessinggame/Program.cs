@@ -1,6 +1,6 @@
 ﻿using System;
-
-int SecretNumber = 36;
+Random r = new Random();
+int SecretNumber = r.Next(1, 100);
 bool isAnswerCorrect = false;
 int NumofGuesses = 0;
 Guesses();
