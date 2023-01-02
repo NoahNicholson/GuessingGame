@@ -1,7 +1,7 @@
 ﻿using System;
 Random r = new Random();
-int SecretNumber = r.Next(1, 100);
-bool isAnswerCorrect = false;
+int SecretNumber = r.Next(1, 101);
+bool IsAnswerCorrect = false;
 int NumofGuesses = 0;
 Guesses();
 
@@ -13,7 +13,7 @@ void Guesses()
     GuessEqualToSecretNumber(ParsedAnswer);
 
 
-    while (isAnswerCorrect == false && NumofGuesses < 4)
+    while (IsAnswerCorrect == false && NumofGuesses < 4)
     {
         Console.WriteLine("Guess The secret number?");
         answer = Console.ReadLine(); //reads the user input
@@ -29,7 +29,7 @@ void GuessEqualToSecretNumber(int answer)
     if (answer == SecretNumber)
     {
         Console.WriteLine($"Your guess is correct");
-        isAnswerCorrect = true;
+        IsAnswerCorrect = true;
     }
     else
     {
